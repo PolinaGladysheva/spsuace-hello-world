@@ -13,8 +13,13 @@ public class IntegerTask {
      * Сумма чисел от 1 до n (1 + 2 + 3 + ... + n)
      * Пример: (5) -> 15
      */
-    public static int sum(int n) {
-        return 0;
+    public static int sum(int n)
+    {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum = sum + i;
+        }
+        return sum;
     }
 
     /**
@@ -23,16 +28,42 @@ public class IntegerTask {
      * Верните число Integer.MAX_VALUE;
      * Пример: (10, 3, 2) -> 8
      */
-    public static int snake(int height, int top, int bottom) {
-        return 0;
+    public static int snake(int height, int top, int bottom)
+    {
+        int days = 1;
+        int path = 0;
+        if (height <= top) {
+            return days;
+        }
+        if (bottom >= top) {
+            return Integer.MAX_VALUE;
+        }
+        while(height >= path){
+            path = path + top;
+            if (path >= height) {
+                break;
+            }
+            path = path - bottom;
+            days++;
+        }
+        return days;
     }
 
     /**
      * Дано число n и номер разряда order. Выведите цифру стояющую на нужном разряде
      * Пример: (454355, 3) -> 3
      */
-    public static int kDecimal(int n, int order) {
-        return 0;
+    public static int kDecimal(int n, int order)
+    {
+        if (n<0){
+            n = n * (-1);
+        }
+        int number = 0;
+        for (int i = 1;i<=order;i++){
+            number = n%10;
+            n = n / 10;
+        }
+        return number;
     }
 
 
@@ -40,7 +71,12 @@ public class IntegerTask {
      * Выведите факториал от числа n
      * Пример: (5) -> 120
      */
-    public static long factorial(byte n) {
-        return 0;
+    public static long factorial(byte n)
+    {
+        long factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial = factorial * i;
+        }
+        return factorial;
     }
 }
